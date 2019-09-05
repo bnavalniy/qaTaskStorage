@@ -38,4 +38,9 @@ Software testing tasks
 * Add missing automatic tests
 * Report all bugs/gaps you can find (steps to reproduce... etc.)
 
+Please sign in (or register https://gitlab.com/users/sign_in#register-pane) on gitlab 
+and put all bugs/gaps as issues https://gitlab.com/stden/file-storage-qa/issues
+
+Put all you code changes into new branch.
+
 Good luck ;)
