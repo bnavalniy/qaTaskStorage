@@ -23,4 +23,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
         return new fs.security.UserDetails(user);
     }
+    public boolean saveUser(){
+        return true;
+    }
 }
