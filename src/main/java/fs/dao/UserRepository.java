@@ -1,10 +1,11 @@
 package fs.dao;
 
 import fs.domain.User;
-import org.springframework.data.repository.Repository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface UserRepository extends Repository<User, Long> {
+public interface UserRepository extends CrudRepository<User, Long> {
     User findByUsername(String username);
 
-    User findById(Long id);
+    User findUserById(Long id);
+
 }

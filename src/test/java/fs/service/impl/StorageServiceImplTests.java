@@ -62,7 +62,7 @@ public class StorageServiceImplTests {
         when(SecurityContextHolder.getContext().getAuthentication().getPrincipal())
                 .thenReturn(applicationUser);
 
-        when(userRepository.findById(USER_ID)).thenReturn(LOGGED_USER);
+        when(userRepository.findUserById(USER_ID)).thenReturn(LOGGED_USER);
     }
 
     @Test
@@ -74,7 +74,7 @@ public class StorageServiceImplTests {
     @Test
     @DisplayName("Test loadAll method with empty result")
     void testLoadAllWithoutLoggedUser() {
-        when(userRepository.findById(USER_ID)).thenReturn(null);
+        when(userRepository.findUserById(USER_ID)).thenReturn(null);
 
         assertThrows(IllegalArgumentException.class, () -> storageService.loadAll());
     }
@@ -150,4 +150,5 @@ public class StorageServiceImplTests {
                 savedFile.getFsPath().startsWith("null" + File.separator + USER_ID + File.separator),
                 savedFile.getFsPath());
     }
+
 }

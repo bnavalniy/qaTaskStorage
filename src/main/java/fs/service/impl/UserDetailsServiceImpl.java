@@ -23,7 +23,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
         return new fs.security.UserDetails(user);
     }
-    public boolean saveUser(){
+    public boolean saveUser(User user){
+        User userInDB = userRepository.findByUsername(user.getUsername());
+        if(userInDB != null){
+            return false;
+        }
+        userRepository.save(user);
         return true;
     }
+
 }

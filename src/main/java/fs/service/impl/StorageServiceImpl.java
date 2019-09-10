@@ -61,7 +61,7 @@ public class StorageServiceImpl implements StorageService {
     }
 
     private User getOwner(Long currentUserId) {
-        User currentUser = userRepository.findById(currentUserId);
+        User currentUser = userRepository.findUserById(currentUserId);
         if (currentUser == null) {
             throw new IllegalArgumentException("Can't load current user details from DB. Please check!");
         }

@@ -1,15 +1,17 @@
 package fs.service.impl;
-
 import fs.dao.UserRepository;
 import fs.domain.User;
+import org.junit.Assert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
@@ -50,4 +52,14 @@ class UserDetailsServiceImplTests {
         assertTrue(userDetails.isAccountNonExpired());
         assertTrue(userDetails.isEnabled());
     }
+    @Test
+    @DisplayName("Test save user")
+    void testSaveUser(){
+        User user = new User();
+        boolean isCreated = userDetailsService.saveUser(user);
+
+        assertTrue(isCreated);
+        Mockito.verify(userRepository, Mockito.times(1)).save(user);
+    }
+
 }
