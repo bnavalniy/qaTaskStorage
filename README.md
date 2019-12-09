@@ -41,6 +41,6 @@ Software testing tasks
 Please sign in (or register https://gitlab.com/users/sign_in#register-pane) on gitlab 
 and put all bugs/gaps as issues https://gitlab.com/stden/file-storage-qa/issues
 
-Put all you code changes into new branch.
+Put all your code changes into new branch.
 
 Good luck ;)
